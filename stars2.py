@@ -43,10 +43,10 @@ masks = np.array([mask1, mask2, mask3, mask4, mask5])
 summ = 0
 
 for i in range (5):
-    result = morphology.binary_opening(image, masks[i])
-    print("Symbol %i =" % (i+1), np.sum(result)/np.sum(masks[i]))
-    summ +=np.sum(result)/np.sum(masks[i])
-    
+    result = morphology.binary_hit_or_miss(image, masks[i])
+    print("Symbol %i =" % (i+1), np.sum(result))
+    summ +=np.sum(result)
+     
 print("Sum =", summ)
 
 plt.imshow(image)
